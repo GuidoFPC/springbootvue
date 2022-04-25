@@ -6,8 +6,10 @@
   Projeto CRUD para inclusão, listagem, alteração e deleção de documento (entidade fictícia).
 </p>
 
-<p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+## Status
+
+<p align="justify">
+  Em desenvolvimento
 </p>
 
 ## Pré-requisitos
@@ -24,3 +26,19 @@
 
 - ``Springboot 2.6.6 [Spring Data JPA, Validation, JDBC PostgreSQL Driver]``
 - ``VUE 2.6.14 [bootstrap, vue-router, axios]``
+
+## Como rodar a aplicação
+
+<Pendente de criação>
+
+## Tarefas em aberto
+
+:memo: 1 - Componente de mensagem ( exibir msgs do sistema )
+
+:memo: 2 - Validação de formulário
+
+:memo: 3 - Paginação
+
+:memo: 4 - Ordenação da tabela
+
+:memo: 5 - Filtros da tabela
