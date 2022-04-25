@@ -3,7 +3,7 @@
 ## Descrição do projeto 
 
 <p align="justify">
-  Projeto CRUD para inclusão, listagem, alteração e deleção de documento (entidade fictícia).
+  Projeto CRUD para inclusão, listagem, alteração e deleção de documento (entidade fictícia), utilizando as tecnologias Springboot 2.6.6 e VUE 2.6.14.
 </p>
 
 ## Status
