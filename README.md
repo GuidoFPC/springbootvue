@@ -20,7 +20,7 @@
 - ``Vue CLI ( Standard Tooling for Vue.js Development - npm install -g @vue/cli )``
 - ``Eclipse IDE for Java Developers [IDE for backend with Spring Tools 4 ( aka Spring Tool Suite 4 )]``
 - ``Visual Studio Code (IDE for frontend)``
-
+- ``PostgreSQL 14``
 
 ## Tecnologias utilizadas
 
@@ -29,16 +29,18 @@
 
 ## Como rodar a aplicação
 
-<Pendente de criação>
+- ``1. Configure o banco de dados em backend\src\main\resources\application.properties``
+
+<Pendente de conclusão>
 
 ## Tarefas em aberto
 
-:memo: 1 - Componente de mensagem ( exibir msgs do sistema )
+:memo: 1. Componente de mensagem ( exibir msgs do sistema )
 
-:memo: 2 - Validação de formulário
+:memo: 2. Validação de formulário
 
-:memo: 3 - Paginação
+:memo: 3. Paginação
 
-:memo: 4 - Ordenação da tabela
+:memo: 4. Ordenação da tabela
 
-:memo: 5 - Filtros da tabela
+:memo: 5. Filtros da tabela
