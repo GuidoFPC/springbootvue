@@ -1,5 +1,11 @@
 # springbootvue
 
+## Descrição do projeto 
+
+<p align="justify">
+  Projeto CRUD para inclusão, listagem, alteração e deleção de documento (entidade fictícia).
+</p>
+
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
@@ -9,9 +15,10 @@
 - ``Java 11``
 - ``Maven``
 - ``[Node](https://nodejs.org/en/download/)``
-- ``Vue CLI ( npm install -g @vue/cli )``
+- ``Vue CLI ( Standard Tooling for Vue.js Development - npm install -g @vue/cli )``
 - ``Eclipse IDE for Java Developers [IDE for backend with Spring Tools 4 ( aka Spring Tool Suite 4 )]``
 - ``Visual Studio Code (IDE for frontend)``
+
 
 ## Tecnologias utilizadas
 
