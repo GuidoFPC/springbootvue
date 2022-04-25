@@ -6,8 +6,8 @@
 
 ## Pré-requisitos
 
-:warning: [Java 11]
-:warning: [Node](https://nodejs.org/en/download/)
+- Java 11
+- [Node](https://nodejs.org/en/download/)
 
 ## ✔️ Tecnologias utilizadas
 
