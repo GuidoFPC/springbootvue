@@ -33,13 +33,13 @@
 
 <Pendente de conclusão>
 
-## EndPoints [DocumentoController](https://github.com/GuidoFPC/springbootvue/blob/main/backend/src/main/java/br/leg/camara/helloword/controllers/DocumentoController.java)
+## EndPoints ([DocumentoController](https://github.com/GuidoFPC/springbootvue/blob/main/backend/src/main/java/br/leg/camara/helloword/controllers/DocumentoController.java))
 
-- ``GET: http://localhost:8180/documentos?page=0&size=5&sort=nome,ASC``
-- ``GET: http://localhost:8180/documentos/{id}``
-- ``POST: http://localhost:8180/documentos``
-- ``PUT: http://localhost:8180/documentos/{id}``
-- ``DELETE: http://localhost:8180/documentos/{id}``
+- ``GET: http://localhost:8180/documentos?page=0&size=5&sort=nome,ASC`` (Recuperar todos)
+- ``GET: http://localhost:8180/documentos/{id}`` (Recuperar por id)
+- ``POST: http://localhost:8180/documentos`` (Inclusão)
+- ``PUT: http://localhost:8180/documentos/{id}`` (Alteração)
+- ``DELETE: http://localhost:8180/documentos/{id}`` (Deleção)
 
 ## Tarefas em aberto
 
