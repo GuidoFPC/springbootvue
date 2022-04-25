@@ -1,0 +1,11 @@
+
+
+	https://vuejs.org/
+
+	https://cli.vuejs.org/guide/creating-a-project.html
+
+	https://www.youtube.com/watch?v=wsAQQioPIJs&list=PLnDvRpP8BnezDglaAvtWgQXzsOmXUuRHL&index=1
+
+	https://www.youtube.com/watch?v=Jg4GOPaE4do
+	
+	https://www.youtube.com/watch?v=n-uQFFj7b4A
