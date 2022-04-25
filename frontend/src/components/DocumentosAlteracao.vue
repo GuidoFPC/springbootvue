@@ -86,7 +86,6 @@ export default {
       }
 
       const data = {
-        id: this.id,
         nome: this.doc.nome,
         tipo: this.doc.tipo,
         classificacao: this.doc.classificacao,

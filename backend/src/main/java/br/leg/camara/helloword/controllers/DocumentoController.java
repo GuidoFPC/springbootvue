@@ -41,7 +41,7 @@ public class DocumentoController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> save(@RequestBody @Valid DocumentoDTO dto){
+	public ResponseEntity<Object> incluir(@RequestBody @Valid DocumentoDTO dto) {
         
 		if (documentoService.existsByNome(dto.getNome())) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflict: Documento" + dto.getNome() + " ja existe!");
@@ -54,12 +54,13 @@ public class DocumentoController {
     }
 
     @GetMapping
-	public ResponseEntity<Page<Documento>> getAll(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+	public ResponseEntity<Page<Documento>> recuperarTodos(
+			@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
 		return ResponseEntity.status(HttpStatus.OK).body(documentoService.findAll(pageable));
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Object> getById(@PathVariable(value = "id") UUID id) {
+	public ResponseEntity<Object> recuperarPorId(@PathVariable(value = "id") UUID id) {
 		Optional<Documento> DocumentoOptional = documentoService.findById(id);
 		if (!DocumentoOptional.isPresent()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Documento nao encontrado.");
@@ -68,7 +69,7 @@ public class DocumentoController {
 	}
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> delete(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Object> excluir(@PathVariable(value = "id") UUID id){
         Optional<Documento> DocumentoOptional = documentoService.findById(id);
         if (!DocumentoOptional.isPresent()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Documento nao encontrado.");
@@ -78,7 +79,7 @@ public class DocumentoController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<Object> update(@PathVariable(value = "id") UUID id,
+	public ResponseEntity<Object> alterar(@PathVariable(value = "id") UUID id,
                                          @RequestBody @Valid DocumentoDTO documentoDTO){
     	
 		Optional<Documento> DocumentoOptional = documentoService.findById(id);
