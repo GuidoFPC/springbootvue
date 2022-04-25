@@ -6,16 +6,14 @@
 
 ## Pré-requisitos
 
-- Java 11
-- Maven
-- [Node](https://nodejs.org/en/download/)
-- Vue CLI ( npm install -g @vue/cli )
-- Eclipse IDE for Java Developers (IDE for backend)
-- Visual Studio Code (IDE for frontend)
-
-## ✔️ Tecnologias utilizadas
-
 - ``Java 11``
-- ``Eclipse com Spring Tools 4 ( aka Spring Tool Suite 4 )``
+- ``Maven``
+- ``[Node](https://nodejs.org/en/download/)``
+- ``Vue CLI ( npm install -g @vue/cli )``
+- ``Eclipse IDE for Java Developers [IDE for backend with Spring Tools 4 ( aka Spring Tool Suite 4 )]``
+- ``Visual Studio Code (IDE for frontend)``
+
+## Tecnologias utilizadas
+
 - ``Springboot 2.6.6 [Spring Data JPA, Validation, JDBC PostgreSQL Driver]``
 - ``VUE 2.6.14 [bootstrap, vue-router, axios]``
