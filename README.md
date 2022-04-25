@@ -29,9 +29,17 @@
 
 ## Como rodar a aplicação
 
-- ``1. Configure o banco de dados em backend\src\main\resources\application.properties``
+- ``1. Configure o banco de dados em \backend\src\main\resources\application.properties``
 
 <Pendente de conclusão>
+
+## EndPoints [DocumentoController](https://github.com/GuidoFPC/springbootvue/blob/main/backend/src/main/java/br/leg/camara/helloword/controllers/DocumentoController.java)
+
+- ``GET: http://localhost:8180/documentos?page=0&size=5&sort=nome,ASC``
+- ``GET: http://localhost:8180/documentos/{id}``
+- ``POST: http://localhost:8180/documentos``
+- ``PUT: http://localhost:8180/documentos/{id}``
+- ``DELETE: http://localhost:8180/documentos/{id}``
 
 ## Tarefas em aberto
 
