@@ -7,7 +7,11 @@
 ## Pré-requisitos
 
 - Java 11
+- Maven
 - [Node](https://nodejs.org/en/download/)
+- Vue CLI ( npm install -g @vue/cli )
+- Eclipse IDE for Java Developers (IDE for backend)
+- Visual Studio Code (IDE for frontend)
 
 ## ✔️ Tecnologias utilizadas
 
