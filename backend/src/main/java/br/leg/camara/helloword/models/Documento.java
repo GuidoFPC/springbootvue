@@ -21,16 +21,16 @@ public class Documento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	@Column
+	@Column(nullable = false, length = 255)
 	private String nome;
 
-	@Column
+	@Column(nullable = false, length = 255)
 	private String tipo; // memorando, circular, decreto, lei
 
-	@Column
+	@Column(nullable = false, length = 255)
 	private String classificacao; // publico, sigiloso
 
-	@Column
+	@Column(nullable = false, length = 255)
 	private String conteudo;
 
     @Column(nullable = false)

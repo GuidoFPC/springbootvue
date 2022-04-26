@@ -45,10 +45,8 @@
 
 :memo: 1. Componente de mensagem ( exibir msgs do sistema )
 
-:memo: 2. Validação de formulário
+:memo: 2. Paginação
 
-:memo: 3. Paginação
+:memo: 3. Ordenação da tabela
 
-:memo: 4. Ordenação da tabela
-
-:memo: 5. Filtros da tabela
+:memo: 4. Filtros da tabela
