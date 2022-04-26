@@ -31,7 +31,7 @@
 
 - ``1. Configure o banco de dados em \backend\src\main\resources\application.properties``
 
-<Pendente de conclusão>
+<A documentação desse tópico ainda será concluída>
 
 ## EndPoints ([DocumentoController](https://github.com/GuidoFPC/springbootvue/blob/main/backend/src/main/java/br/leg/camara/helloword/controllers/DocumentoController.java))
 
