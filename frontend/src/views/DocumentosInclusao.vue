@@ -72,7 +72,7 @@
 </template>
 
 <script>
-const todoUrl = "http://localhost:8180/documentos";
+import docsapi from "@/services/docsapi";
 
 export default {
   name: "DocumentosInclusao",
@@ -126,7 +126,7 @@ export default {
         classificacao: this.classificacao,
         conteudo: this.conteudo,
       };
-
+/*
       const dataJson = JSON.stringify(data);
 
       const req = await fetch(todoUrl, {
@@ -134,8 +134,11 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
+*/
+      const req = await docsapi.post("/", data);
 
-      const res = await req.json();
+/*      const res = await req.json(); */
+      const res = req.data;
 
       console.log("Inclusão realizada com sucesso!");
       console.log(res);

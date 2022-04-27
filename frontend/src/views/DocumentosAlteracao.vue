@@ -66,9 +66,7 @@
 </template>
 
 <script>
-import axios from "axios";
-
-const todoUrl = "http://localhost:8180/documentos";
+import docsapi from "@/services/docsapi";
 
 export default {
   name: "DocumentosInclusao",
@@ -81,14 +79,11 @@ export default {
       errors: [],
     };
   },
-  props: {
-    
-  },
+  props: {},
   methods: {
     validarForm: function (e) {
-      
       this.errors = [];
-      
+
       if (!this.doc.nome) {
         this.errors.push("O campo 'Nome' é obrigatório.");
       }
@@ -110,7 +105,6 @@ export default {
       }
     },
     async createDoc(e) {
-
       e.preventDefault();
 
       if (!confirm("Confirma a alteração do registro?")) {
@@ -124,6 +118,7 @@ export default {
         conteudo: this.doc.conteudo,
       };
 
+/*
       const dataJson = JSON.stringify(data);
 
       const req = await fetch(`http://localhost:8180/documentos/${this.id}`, {
@@ -133,6 +128,9 @@ export default {
       });
 
       const res = await req.json();
+*/
+      const req = await docsapi.put(`/${this.id}`, data);
+      const res = req.data;
 
       console.log("Alteração realizada com sucesso!");
       // console.log(res);
@@ -155,12 +153,11 @@ export default {
 
     this.id = this.$route.params.id;
 
-    await axios
-      .get(`http://localhost:8180/documentos/${this.id}`)
+    await docsapi.get(`/${this.id}`)
       .then((response) => {
-         this.doc = response.data;
-      });
-
+        this.doc = response.data;
+        }
+    );
   },
 };
 </script>

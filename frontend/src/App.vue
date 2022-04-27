@@ -2,7 +2,7 @@
   <div id="app" class="container">
     
     <Message :msg="msg" v-show="msg" ></Message>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 

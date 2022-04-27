@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <h3 class="d-flex justify-content-center">Vue 2 e Springboot</h3>
     <h6 class="d-flex justify-content-center">CRUD Documentos</h6>
 
@@ -8,17 +8,27 @@
         <button
           type="button"
           class="btn btn-outline-primary"
-          @click="$router.push({ path: '/inclusao'})"
+          @click="$router.push({ path: '/inclusao' })"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
-            <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"/>
-            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-file-plus"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"
+            />
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+            />
           </svg>
           Novo documento
         </button>
 
         <!-- router-link to="/inclusao" >Pag 1</router-link -->
-
       </div>
     </div>
     <div class="row">
@@ -36,10 +46,9 @@
                 {{ item.nome }}: {{ item.conteudo }}
               </td>
               <td class="align-middle text-center w-25">
-                <!-- @click="handleEdit(item.id)" -->
                 <button
                   class="btn btn-primary btn-sm mx-1"
-                  @click="$router.push({ path: `/alteracao/${item.id}`})"
+                  @click="handleEdit(item.id)"
                   title="Editar registro"
                 >
                   <svg
@@ -87,9 +96,7 @@
 </template>
 
 <script>
-import axios from "axios";
-
-const todoUrl = "http://localhost:8180/documentos";
+import docsapi from "@/services/docsapi";
 
 export default {
   name: "DocumentosLista",
@@ -97,53 +104,48 @@ export default {
     return {
       todoList: [],
       todoItem: {},
-      editMode: false,
     };
   },
   methods: {
     handleEdit(id) {
       // this.editMode = true;
       // this.todoItem = this.todoList.find((item) => item.id == id);
-    },
-    handleCancel() {
-      this.editMode = false;
-      this.todoItem = "";
-    },
-    async handleToDoItem() {
-      const id = this.todoItem.id;
-
-      if (this.editMode) {
-        await axios.put("${todoUrl}/${id}", this.todoItem);
-        this.editMode = false;
-        this.todoItem.content = "";
-      } else {
-        await axios.post(todoUrl, this.todoItem);
-        this.todoItem.content = "";
-      }
-
-      axios
-        .get(todoUrl)
-        .then((response) => (this.todoList = response.data.content));
+      this.$router.push({ path: `/alteracao/${id}` });
     },
     async handleDelete(id) {
       if (!confirm("Confirma exclusão?")) {
         return;
       }
 
-      await axios.delete(`${todoUrl}/${id}`);
+      await docsapi.delete(`/${id}`);
 
-      axios
-        .get(todoUrl)
+      docsapi
+        .get("/")
+        .then((response) => (this.todoList = response.data.content));
+    },
+    // Servia p/ salvar um item rápido da tela;
+    async handleToDoItem() {
+      const id = this.todoItem.id;
+
+      if (this.editMode) {
+        await docsapi.put("/${id}", this.todoItem);
+        this.editMode = false;
+        this.todoItem.content = "";
+      } else {
+        await docsapi.post("/", this.todoItem);
+        this.todoItem.content = "";
+      }
+
+      docsapi
+        .get("/")
         .then((response) => (this.todoList = response.data.content));
     },
   },
   created() {
-    axios
-      .get(todoUrl)
+    docsapi
+      .get("/")
       .then((response) => (this.todoList = response.data.content));
   },
-  components:{
-
-  }
+  components: {},
 };
 </script>
